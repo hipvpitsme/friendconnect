@@ -1,5 +1,6 @@
-'use strict';
 //imports
+const cluster = require('cluster');
+const numCPUs = require('os').cpus().length;
 let dns = require('native-dns');
 let server = dns.createServer();
 let async = require('async');
@@ -70,7 +71,6 @@ let entries = [
  ];
 //handle requests function
   function handleRequest(request, response) {
-    console.log('request from', request.address.address, 'for', request.question[0].name);
     let f = [];
     request.question.forEach(question => {
       let entry = entries.filter(r => new RegExp(r.domain, 'i').exec(question.name));
@@ -84,9 +84,7 @@ let entries = [
             }
             response.answer.push(dns[record.type](record));
           });
-      } else {
-        f.push(cb => proxy(question, response, cb));
-      }
+        }
     });
     async.parallel(f, function() { response.send(); });
   }
