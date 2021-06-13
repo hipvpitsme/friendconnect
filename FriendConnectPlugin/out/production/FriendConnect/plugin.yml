@@ -1,0 +1,13 @@
+#name, main, version and api are required
+name: FriendConnect
+main: io.github.hipvpitsme.friendconnect.Main
+#remember version and api is string, don't write it like this: 1.0.0, or there will be an exception
+version: "1.0.0"
+api: ["1.0.0"]
+load: POSTWORLD
+author: hipvpitsme
+description: Plugin for the FriendConnect Server
+commands:
+  example:
+    description: idk bro
+    usage: "/example"
