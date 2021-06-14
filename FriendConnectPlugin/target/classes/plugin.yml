@@ -1,0 +1,24 @@
+name: FriendConnect
+main: io.github.hipvpitsme.friendconnect.Main
+version: "1.0.0"
+api: ["1.0.0"]
+load: POSTWORLD
+author: hipvpitsme
+description: Plugin for the FriendConnect Server
+commands:
+  addserver:
+    description: /addserver <paid> <name> <ip> <port>
+    usage: "/addserver"
+    permission: friendconnect.commands
+  removeserver:
+    description: /removeserver <name>
+    usage: "/removeserver"
+    permission: friendconnect.commands
+  listserver:
+    description: /listserver
+    usage: "/listserver"
+    permission: friendconnect.commands
+permissions:
+  friendconnect.commands:
+    description: "null"
+    default: op
