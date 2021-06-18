@@ -18,7 +18,18 @@ commands:
     description: /listserver
     usage: "/listserver"
     permission: friendconnect.commands
-permissions:
+  adddefault:
+    description: /adddefault
+    usage: "/adddefault"
+    permission: friendconnect.commands
+  removedefault:
+    description: /removedefault
+    usage: "/removedefault"
+    permission: friendconnect.commands
+  serverstats:
+    description: /serverstats
+    usage: "/serverstats"
+    permission: friendconnect.commands
   friendconnect.commands:
     description: "null"
     default: op
